@@ -21,10 +21,19 @@
 		function addRow() {
 			let table = document.getElementById("thisTable");
 			let row = table.insertRow(-1);
-			let cell1 = row.insertCell(0);
-			let cell2 = row.insertCell(1);
-      		cell1.innerHTML = "NEW CELL1";
-      		cell2.innerHTML = "NEW CELL2";
+			let numCols = table.rows.length > 0 ? table.rows[0].cells.length : 0;
+			if (numCols === 0) {
+				for (var i = 0; i < 2; i++) {
+					var cell = row.insertCell(i);
+					cell.innerHTML = "NEW CELL";
+				}
+			} else {
+				// Add cells based on the number of columns
+				for (var i = 0; i < numCols; i++) {
+					var cell = row.insertCell(i);
+					cell.innerHTML = "NEW CELL";
+				}
+      		}
 		}
 
 		function addColumn() {
