@@ -28,7 +28,11 @@
 		}
 
 		function addColumn() {
-			console.log("adding column")
+			let table = document.getElementById("thisTable");
+			for (let i = 0; i < table.rows.length; i++) {
+			let cell = table.rows[i].insertCell(-1);
+			cell.innerHTML = "NEW CELL";
+			}
 		}
 	
 	</script>
